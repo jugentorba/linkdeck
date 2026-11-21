@@ -23,7 +23,6 @@ dist/
 # Generated iconset staging
 shared/icon/LinkDeck.iconset/
 
-# Local test captures
-apps/ios/screenshot.png
-apps/ios/screenshot-browser.png
+# Local test captures (kept out of git)
 apps/ios/dynamic-type.png
+apps/ios/deck-test.png

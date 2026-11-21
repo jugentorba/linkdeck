@@ -22,7 +22,8 @@ One product, four builds: **Android**, **iOS**, **macOS**, and a **PWA**.
 - **Ad, tracker and popup blocking.** A bundled 6,597-domain blocklist is matched
   by domain suffix, so blocking `doubleclick.net` also blocks every subdomain.
   Ad slots are hidden and popups that were not triggered by a real tap are
-  suppressed. The shield shows how many requests were blocked.
+  suppressed. The shield shows what each platform can measure: exact blocked
+  requests on Android, cosmetic/popup filtering on WebKit.
 - **Pin as an app.**
   - **Android:** a real pinned launcher shortcut with the site's favicon that
     boots straight into the site.
@@ -39,9 +40,24 @@ One product, four builds: **Android**, **iOS**, **macOS**, and a **PWA**.
 
 ---
 
+## Prebuilt binaries
+
+`dist/` contains the four deliverables from `tools/package.sh`:
+
+| File | Install |
+| --- | --- |
+| `LinkDeck-1.0.0-android.apk` | Sideload on Android 8+ (debug-signed). |
+| `LinkDeck-1.0.0-ios-unsigned.ipa` | Re-sign with your team/profile, then install. |
+| `LinkDeck-1.0.0-macos.zip` | Unzip, move `LinkDeck.app` to Applications, open. |
+| `LinkDeck-1.0.0-pwa.zip` | Serve the folder over HTTP/HTTPS, or deploy it to any static host. |
+
+`SHA256SUMS.txt` has the checksums. Rebuild all four with `./tools/package.sh`.
+
 ## Build & run
 
 Each target is independent. You only need the toolchain for the one you want.
+`tools/package.sh` builds every deliverable into `dist/` (APK, unsigned IPA,
+macOS zip, PWA zip, SHA256SUMS).
 
 ### Android — `apps/android`
 
@@ -155,14 +171,19 @@ See `shared/design.md`.
 
 | Target | Built | Run | Notes |
 | --- | --- | --- | --- |
-| Android | ✅ debug + release config | ⚠️ not run here | No bootable system image on this Mac and the disk is nearly full; APK inspected with `aapt2` (label, icon, assets). `install.sh` is ready for a device. |
-| iOS | ✅ simulator + unsigned device IPA | ✅ installed & launched on iPhone 17 | Screenshot above; deck, add sheet and browser compile and run. `LinkDeck-unsigned.ipa` must be re-signed for hardware. |
+| Android | ✅ debug APK | ⚠️ not run here | No bootable system image on this Mac and the disk is nearly full; the APK was inspected with `aapt2` (label, icon, bundled assets). `install.sh` is ready for a device. |
+| iOS | ✅ simulator (+ unsigned IPA script) | ✅ installed & launched on iPhone 17 | Deck, add sheet and browser run. Test page: 5 ad requests, **0 loaded**, ad slot hidden, shield incremented. |
 | macOS | ✅ Release | ✅ launched + self-test | 28/28 self-test checks, including a generated pinned app and its signature. Screenshot above. |
-| PWA | ✅ (static) | ✅ served + exercised | Manifest/service worker validate; desktop and mobile screenshots. |
+| PWA | ✅ (static) | ✅ served + exercised | Puppeteer pass over add/rename/remove, context menus, `?app=`, install flow, offline reload and 404s; axe-core 0 violations. |
 
-Try the blocker with `tools/testpage/index.html`: it requests four known ad hosts,
-adds an ad slot and a popup button. Serve it (`python3 -m http.server 8099`) and
-open it as an app; the shield count rises as requests are blocked.
+Try the blocker with `tools/testpage/index.html`: it requests five known ad
+resources, adds an ad slot and a popup button. Serve it
+(`python3 -m http.server 8099`) and open it as an app.
+
+![iOS blocking test](apps/ios/screenshot-browser.png)
+
+*iOS on the iPhone 17 simulator: 5 ad requests finished, 0 loaded; the ad slot is
+hidden and the shield shows the cosmetic/popup count.*
 
 ---
 

@@ -14,7 +14,11 @@ final class BrowserController: NSObject {
     var progress: Double = 0
     var canGoBack = false
     var isLoading = true
-    var controlsVisible = true
+    var controlsVisible = true {
+        didSet {
+            if controlsVisible != oldValue { applyHeaderInset() }
+        }
+    }
     var sessionBlocked = 0
     var desktopMode = false
     var pageTitle = ""
@@ -34,6 +38,7 @@ final class BrowserController: NSObject {
     @ObservationIgnored private var lastScrollY: CGFloat = 0
 
     private static let fallbackURL = URL(string: "https://example.com")!
+    private static let headerInset: CGFloat = 58
     private static let desktopUserAgent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Safari/605.1.15"
 
     var displayHost: String {
@@ -95,6 +100,8 @@ final class BrowserController: NSObject {
         webView.uiDelegate = self
         webView.scrollView.delegate = self
         webView.scrollView.contentInsetAdjustmentBehavior = .never
+        webView.scrollView.contentInset.top = Self.headerInset
+        webView.scrollView.verticalScrollIndicatorInsets.top = Self.headerInset
         webView.allowsBackForwardNavigationGestures = false
         webView.allowsLinkPreview = true
         webView.isOpaque = false
@@ -159,6 +166,21 @@ final class BrowserController: NSObject {
         hideTask?.cancel()
         hideTask = nil
         controlsVisible = false
+    }
+
+    /// Keeps the page below the floating header while it is visible, and lets
+    /// the content move up when the header fades away.
+    private func applyHeaderInset() {
+        let inset = controlsVisible ? Self.headerInset : 0
+        let scrollView = webView.scrollView
+        guard scrollView.contentInset.top != inset else { return }
+        let delta = inset - scrollView.contentInset.top
+        scrollView.contentInset.top = inset
+        scrollView.verticalScrollIndicatorInsets.top = inset
+        var offset = scrollView.contentOffset
+        offset.y -= delta
+        offset.y = max(offset.y, -inset)
+        scrollView.setContentOffset(offset, animated: false)
     }
 
     func scheduleAutoHide(after seconds: Double = 3) {
@@ -386,6 +408,7 @@ extension BrowserController: WKNavigationDelegate {
         isLoading = false
         loadError = nil
         if let url = webView.url { currentURL = url }
+        webView.scrollView.contentInset.top = controlsVisible ? Self.headerInset : 0
         scheduleAutoHide()
     }
 
