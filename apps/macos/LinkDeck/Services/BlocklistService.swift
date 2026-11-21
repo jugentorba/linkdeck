@@ -144,17 +144,19 @@ final class BlocklistService {
         }
     }
 
-    /// Suffix match, case-insensitive, with the top-level document explicitly
-    /// excluded so the app itself can never be blocked.
+    /// Suffix match, case-insensitive. Third-party only, so a site that the
+    /// user deliberately saved is never blocked at the top level. `document`
+    /// is included so third-party ad iframes are filtered too.
     static func rulesJSON(domains: [String]) -> Data? {
-        let resourceTypes = ["image", "style-sheet", "script", "font", "media", "raw", "svg-document", "popup"]
+        let resourceTypes = ["image", "style-sheet", "script", "font", "media", "raw", "svg-document", "document", "popup"]
         let rules: [[String: Any]] = domains.compactMap { domain in
             let pattern = regexEscape(domain)
             guard !pattern.isEmpty else { return nil }
             return [
                 "trigger": [
-                    "url-filter": "^https?://([^/]+\\.)?\(pattern)([/:]|$)",
+                    "url-filter": "^https?://([^/]+\\.)?\(pattern)([/:])",
                     "url-filter-is-case-sensitive": false,
+                    "load-type": ["third-party"],
                     "resource-type": resourceTypes
                 ],
                 "action": ["type": "block"]

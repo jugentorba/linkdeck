@@ -18,8 +18,17 @@
     '[class*="adslot"]',
     '[class*="adsbygoogle"]',
     '[id*="div-gpt-ad"]',
+    '[data-ad]',
     '[data-ad-slot]',
     '[data-ad-client]',
+    '[class*="preroll"]',
+    '[class*="pre-roll"]',
+    '[class*="ad-banner"]',
+    '[class*="ad-overlay"]',
+    '[class*="sponsor"]',
+    '[class*="sponsored"]',
+    '[id*="install" i][id*="banner" i]',
+    '[class*="install" i][class*="banner" i]',
     '[aria-label="Advertisement"]',
     '[aria-label="advertisement"]'
   ];

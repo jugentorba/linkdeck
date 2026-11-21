@@ -81,7 +81,7 @@ xcrun simctl launch booted dev.linkdeck.app
 
 ## How blocking works
 
-- `Resources/blocklist.txt` (6,597 domains) is compiled once into a
+- `Resources/blocklist.txt` (6,603 domains) is compiled once into a
   `WKContentRuleList` — one suffix-match rule per domain, so `doubleclick.net`
   also covers `ad.doubleclick.net`. The compiled list is cached in
   `WKContentRuleListStore` under a hash of the blocklist (first compile ≈5 s).

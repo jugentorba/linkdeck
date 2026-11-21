@@ -31,7 +31,7 @@ Release build (minified):
 - **In-app browser** — full-screen WebView with a floating header (back, host, shield,
   menu). The header hides on scroll and comes back with a tap at the top edge or an
   upward scroll. Desktop-site toggle, reload, open in system browser, remove.
-- **Ad & tracker blocking** — 6,597 domain suffixes loaded from
+- **Ad & tracker blocking** — 6,603 domain suffixes loaded from
   `app/src/main/assets/blocklist.txt`. Requests are blocked in
   `shouldInterceptRequest` (never the main document), counted in the shield, and
   persisted per app. Cosmetic filtering + popup suppression run from

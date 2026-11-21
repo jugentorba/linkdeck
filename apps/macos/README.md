@@ -20,7 +20,7 @@ site, with its own Dock icon and its own window.
   by the site. The floating header shows back, lock + host, session shield count,
   and a menu. It auto-hides after three seconds; click the slim bar at the top
   edge to bring it back.
-- **Blocking** — 6,597 suffix-matched ad/tracker domains compiled into a cached
+- **Blocking** — 6,603 suffix-matched ad/tracker domains compiled into a cached
   `WKContentRuleList`, plus cosmetic filtering and a popup guard injected at
   document start in every frame. Top-level navigation is never blocked.
 - **Pin as app** — generated `.app` bundles in `~/Applications/LinkDeck`, with a

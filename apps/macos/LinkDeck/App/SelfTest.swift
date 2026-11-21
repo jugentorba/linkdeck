@@ -77,11 +77,17 @@ enum SelfTest {
             check(rules.count == blocklist.domainCount, "creates one rule per domain")
             if let trigger = rules.first?["trigger"] as? [String: Any],
                let types = trigger["resource-type"] as? [String],
+               let loadTypes = trigger["load-type"] as? [String],
                let filter = trigger["url-filter"] as? String {
-                check(!types.contains("document"), "never blocks the top-level document")
+                check(types.contains("document"), "blocks third-party ad iframes")
+                check(loadTypes == ["third-party"], "only blocks third-party requests")
                 check(filter.hasPrefix("^https?://([^/]+\\.)?"), "uses a suffix-match regular expression")
             }
             check(RuleListVerifier.validates(data: data), "rule list decodes as a JSON array of rules")
+            if let json = String(data: data, encoding: .utf8) {
+                let compiled = await compilesInWebKit(json)
+                check(compiled, "WebKit compiles the content rule list")
+            }
         } else {
             check(false, "creates a JSON rule list")
         }
@@ -127,6 +133,21 @@ enum SelfTest {
         }
 
         return finish(checks: checks, failures: failures)
+    }
+
+    private static func compilesInWebKit(_ json: String) async -> Bool {
+        guard let store = WKContentRuleListStore.default() else { return false }
+        return await withCheckedContinuation { continuation in
+            store.compileContentRuleList(
+                forIdentifier: "linkdeck-selftest-\(UUID().uuidString)",
+                encodedContentRuleList: json
+            ) { list, error in
+                if let error {
+                    print("  --   WebKit rule compile error: \(error.localizedDescription)")
+                }
+                continuation.resume(returning: list != nil)
+            }
+        }
     }
 
     private static func finish(checks: Int, failures: [String]) -> Bool {

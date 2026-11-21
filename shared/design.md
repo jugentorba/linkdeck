@@ -124,7 +124,7 @@ platform can and cannot do (especially PWA ad blocking and iOS home-screen pinni
 ## 4. Shared files
 
 ```
-shared/blocklist.txt     6,597 suffix-matched domains (AdAway + curated networks)
+shared/blocklist.txt     6,603 suffix-matched domains (AdAway + curated networks)
 shared/cosmetic.js       injected cosmetic filter + popup guard
 shared/icon/             all generated icons (PNG, .icns, Android mipmaps)
 ```

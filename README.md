@@ -19,7 +19,7 @@ One product, four builds: **Android**, **iOS**, **macOS**, and a **PWA**.
 - **A browser with no chrome.** Full-screen web content, a floating header that
   gets out of the way, working back stack, desktop-site toggle, video fullscreen,
   and a menu to open the page in the system browser or delete the app.
-- **Ad, tracker and popup blocking.** A bundled 6,597-domain blocklist is matched
+- **Ad, tracker and popup blocking.** A bundled 6,603-domain blocklist is matched
   by domain suffix, so blocking `doubleclick.net` also blocks every subdomain.
   Ad slots are hidden and popups that were not triggered by a real tap are
   suppressed. The shield shows what each platform can measure: exact blocked
@@ -46,10 +46,10 @@ One product, four builds: **Android**, **iOS**, **macOS**, and a **PWA**.
 
 | File | Install |
 | --- | --- |
-| `LinkDeck-1.0.0-android.apk` | Sideload on Android 8+ (debug-signed). |
-| `LinkDeck-1.0.0-ios-unsigned.ipa` | Re-sign with your team/profile, then install. |
-| `LinkDeck-1.0.0-macos.zip` | Unzip, move `LinkDeck.app` to Applications, open. |
-| `LinkDeck-1.0.0-pwa.zip` | Serve the folder over HTTP/HTTPS, or deploy it to any static host. |
+| `LinkDeck-1.0.1-android.apk` | Sideload on Android 8+ (debug-signed). |
+| `LinkDeck-1.0.1-ios-unsigned.ipa` | Re-sign with your team/profile, then install. |
+| `LinkDeck-1.0.1-macos.zip` | Unzip, move `LinkDeck.app` to Applications, open. |
+| `LinkDeck-1.0.1-pwa.zip` | Serve the folder over HTTP/HTTPS, or deploy it to any static host. |
 
 `SHA256SUMS.txt` has the checksums. Rebuild all four with `./tools/package.sh`.
 
@@ -125,7 +125,7 @@ Open <http://localhost:4173>. Install with the in-app **Install** button
 | Cosmetic + popups | `cosmetic.js` injected at document start | same script, all frames | n/a |
 | Count shown | blocked requests (+ real number) | cosmetic + popup filtering | hidden (never faked) |
 
-- `shared/blocklist.txt` — 6,597 unique domains, one per line, `#` comments.
+- `shared/blocklist.txt` — 6,603 unique domains, one per line, `#` comments.
   Built from the AdAway default mobile list plus a curated set of ad exchanges,
   popup networks and malvertising redirectors. Google video/CDN hosts are
   explicitly allowed so media keeps working.

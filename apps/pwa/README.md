@@ -117,7 +117,7 @@ arrow-key tile navigation, and a screen-reader friendly live toast region.
 | `sw.js` | Versioned app-shell cache and offline/404 fallback |
 | `manifest.webmanifest` | Install metadata and icons |
 | `404.html` | Safe not-found page (served by the service worker) |
-| `blocklist.txt` | 6,597 bundled domains, for reference and the native apps |
+| `blocklist.txt` | 6,603 bundled domains, for reference and the native apps |
 | `cosmetic.js` | Native-web-view cosmetic filter, intentionally unused here |
 | `icons/` | 192 / 512 / maskable-512 / Apple touch / favicon |
 | `screenshot-desktop.png`, `screenshot-mobile.png` | Verification screenshots |

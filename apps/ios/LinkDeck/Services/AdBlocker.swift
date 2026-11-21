@@ -146,7 +146,10 @@ final class AdBlocker {
 
     private func makeRules(blockPopups: Bool) -> [[String: Any]] {
         var resourceTypes = [
-            "image", "style-sheet", "script", "font", "raw", "svg-document", "media"
+            "image", "style-sheet", "script", "font", "raw", "svg-document", "media",
+            // Third-party iframes are the usual ad container. Top-level
+            // navigation is first-party and still passes because of load-type.
+            "document"
         ]
         if blockPopups { resourceTypes.append("popup") }
 
@@ -161,7 +164,6 @@ final class AdBlocker {
                     "url-filter": "^https?://([^/]+\\.)?\(escaped)([/:])",
                     "url-filter-is-case-sensitive": false,
                     "load-type": ["third-party"],
-                    // "document" is deliberately absent: top-level pages always load.
                     "resource-type": resourceTypes
                 ],
                 "action": ["type": "block"]

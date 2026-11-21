@@ -6,7 +6,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
-VERSION="1.0.0"
+VERSION="1.0.1"
 DIST="$ROOT/dist"
 SKIP_IOS=false
 [ "${1:-}" = "--skip-ios" ] && SKIP_IOS=true
