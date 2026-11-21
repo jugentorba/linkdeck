@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LinkDeck test page</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin:0; background:#0B0D10; color:#F2F5F7; font-family:-apple-system,Roboto,sans-serif; padding:28px; }
+  h1 { font-size:26px; margin:0 0 6px; }
+  p { color:#98A2B3; line-height:1.5; }
+  .card { margin-top:24px; padding:18px; border:1px solid #272D36; border-radius:16px; background:#14171C; }
+  .big { font-size:44px; font-weight:700; color:#7C6BFF; }
+  #ad-banner { padding:20px; border-radius:12px; background:#2b1520; color:#F87171; margin-top:16px; }
+  button { margin-top:16px; padding:14px 18px; border-radius:12px; border:1px solid #272D36; background:#1C2027; color:#F2F5F7; font-size:15px; }
+  img.tiny { width:1px; height:1px; opacity:0.01; }
+</style>
+</head>
+<body>
+  <h1>LinkDeck test page</h1>
+  <p>This page loads resources from known ad hosts. A working blocker
+     should stop them and the shield count should go up.</p>
+  <div class="card">
+    <div class="big" id="count">…</div>
+    <p id="note">waiting for ad requests…</p>
+  </div>
+  <div id="google_ads_iframe_1" class="ad"><div id="ad-banner">AD SLOT — should be hidden</div></div>
+  <button onclick="window.__report()">Trigger popup</button>
+
+  <script>
+    let loaded = 0;
+    let failed = 0;
+    const targets = [
+      'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?linkdeck=nocache-' + Date.now(),
+      'https://googleads.g.doubleclick.net/pagead/id?linkdeck=' + Date.now(),
+      'https://securepubads.g.doubleclick.net/tag/js/gpt.js?linkdeck=' + Date.now(),
+      'https://static.doubleclick.net/instream/ad_status.js?linkdeck=' + Date.now()
+    ];
+    targets.forEach(function (url, i) {
+      const s = document.createElement('script');
+      s.async = true;
+      s.onload = function () { loaded++; update(); };
+      s.onerror = function () { failed++; update(); };
+      s.src = url;
+      document.head.appendChild(s);
+    });
+    const img = document.createElement('img');
+    img.className = 'tiny';
+    img.onload = function () { loaded++; update(); };
+    img.onerror = function () { failed++; update(); };
+    img.src = 'https://ad.doubleclick.net/ddm/activity/src=0?linkdeck=' + Date.now();
+    document.body.appendChild(img);
+
+    window.__report = function () {
+      for (let i = 0; i < 3; i++) window.open('https://popads.net/?linkdeck=' + Date.now());
+    };
+    function update() {
+      document.getElementById('count').textContent = String(loaded);
+      document.getElementById('note').textContent =
+        (failed + loaded) + ' ad requests finished, ' + loaded + ' actually loaded (0 = blocked)';
+    }
+    update();
+  </script>
+</body>
+</html>

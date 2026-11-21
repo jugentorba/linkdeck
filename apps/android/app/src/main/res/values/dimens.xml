@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="screen_margin">20dp</dimen>
+    <dimen name="tile_gap">12dp</dimen>
+    <dimen name="tile_radius">20dp</dimen>
+    <dimen name="chrome_radius">22dp</dimen>
+    <dimen name="sheet_radius">28dp</dimen>
+    <dimen name="target">44dp</dimen>
+</resources>

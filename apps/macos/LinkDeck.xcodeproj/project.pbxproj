@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		010ABFB7199252449C04F6FD /* SelfTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26AD935FDBDE25C25D2D956D /* SelfTest.swift */; };
+		160FAF8F15B6B102F705AE3A /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E550597FBE2BF8B7C9C32A05 /* Theme.swift */; };
+		1A6A4CDE773BD40BDA6566D4 /* UIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EB8A6A27640BBA18E2F830 /* UIModels.swift */; };
+		1E6EBFB6D6EF04350CB08116 /* cosmetic.js in Resources */ = {isa = PBXBuildFile; fileRef = 51A31D265FB054B905092F3B /* cosmetic.js */; };
+		2EA8EAF50D10E6C7019B5D4F /* blocklist.txt in Resources */ = {isa = PBXBuildFile; fileRef = E7CCBEE74AF902FC142B17DD /* blocklist.txt */; };
+		30F54AFEB7F9F1A9FBF6BF53 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12568D9B909A6CE4A5FCD239 /* SettingsView.swift */; };
+		48F67A1B6DFBCE02EA7DCF8E /* PinnedIconRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7517E7A508AB84E435585201 /* PinnedIconRenderer.swift */; };
+		501EDD9620615348A473D482 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 435A58D154CA432DF98D7BF8 /* AppIcon.icns */; };
+		5F8B484B423617AD01956B1E /* DeckLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66070B30D4176A607067233 /* DeckLink.swift */; };
+		61B12454E7887578969D795F /* SiteIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC789917E1F907AAAC919B06 /* SiteIcon.swift */; };
+		6FCE636A11A9CE1B1F6F1D43 /* StableHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBE1C807C8CFEDA833492E4 /* StableHash.swift */; };
+		7346DCDA9BEBE9EC4443A160 /* BlocklistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4716805393B44BAC360B358 /* BlocklistService.swift */; };
+		76DFE68851C83AB91E80CA9E /* WebAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92399048F3AA6656162E5F3E /* WebAppView.swift */; };
+		7EA8C75D25A78BB3647E3BDD /* DeckWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F89639DBC60245C9DCA87CA /* DeckWindowController.swift */; };
+		82A3E81D6788D84463AAF682 /* DeckStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 709E8C8750EBB0E01E2A7079 /* DeckStore.swift */; };
+		871858EEABC913A0451F952C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9675607A896ACD68604A909A /* AppDelegate.swift */; };
+		8EAC3CCE73FA77A2BE1F71A3 /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB642F83CA6BB2F88C61330F /* DeckView.swift */; };
+		8ED5BA4D260785547B8A8B8B /* LinkDeckMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECCD2C6C94B757DADCF76E4 /* LinkDeckMain.swift */; };
+		9EA74BB858DB652E5542BE80 /* DeckTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C445C1136E01378A7617266 /* DeckTile.swift */; };
+		A8DD7C2B3E0559E16BF62572 /* PinnedAppBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD00B489BAC7E4240B25141 /* PinnedAppBuilder.swift */; };
+		B8ABE2491FA644903BF0A133 /* AddLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F1A8193070A2666934C283 /* AddLinkView.swift */; };
+		BC306D879FFE0C722F01B0B3 /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD1FA924022F6B406683C1B /* Format.swift */; };
+		BCC9A5A0C011AEA5618A393D /* LinkInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF634CCAD4398DD9521F859 /* LinkInput.swift */; };
+		C5DF1C9B66B9D52DC09C0BC6 /* FaviconService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583F34FB80D23E3902552AEE /* FaviconService.swift */; };
+		C79165241E6B4AA80CE58601 /* BrowserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881D8D0B2CDD23092CE90103 /* BrowserModel.swift */; };
+		D0AB87A6E72DA4E3069DB28C /* PinnedLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7D22C7370183D494C355A3 /* PinnedLink.swift */; };
+		DB6EEC097389743CEECC91B3 /* BrowserWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2647EA0FB9B695DD353352 /* BrowserWindowController.swift */; };
+		FEF2671CF0F7F2FEDE1D3FA5 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8354B5AE5AFF5EF9F3F7B811 /* AppSettings.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		12568D9B909A6CE4A5FCD239 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		1C7D22C7370183D494C355A3 /* PinnedLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinnedLink.swift; sourceTree = "<group>"; };
+		1EE8688CB13FEAE8D1B363CF /* LinkDeck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinkDeck.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FF634CCAD4398DD9521F859 /* LinkInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkInput.swift; sourceTree = "<group>"; };
+		26AD935FDBDE25C25D2D956D /* SelfTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfTest.swift; sourceTree = "<group>"; };
+		2EBE1C807C8CFEDA833492E4 /* StableHash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StableHash.swift; sourceTree = "<group>"; };
+		435A58D154CA432DF98D7BF8 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
+		47F1A8193070A2666934C283 /* AddLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLinkView.swift; sourceTree = "<group>"; };
+		4C445C1136E01378A7617266 /* DeckTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTile.swift; sourceTree = "<group>"; };
+		4DD1FA924022F6B406683C1B /* Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
+		51A31D265FB054B905092F3B /* cosmetic.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = cosmetic.js; sourceTree = "<group>"; };
+		583F34FB80D23E3902552AEE /* FaviconService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaviconService.swift; sourceTree = "<group>"; };
+		709E8C8750EBB0E01E2A7079 /* DeckStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckStore.swift; sourceTree = "<group>"; };
+		7517E7A508AB84E435585201 /* PinnedIconRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinnedIconRenderer.swift; sourceTree = "<group>"; };
+		7F89639DBC60245C9DCA87CA /* DeckWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckWindowController.swift; sourceTree = "<group>"; };
+		8354B5AE5AFF5EF9F3F7B811 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		881D8D0B2CDD23092CE90103 /* BrowserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserModel.swift; sourceTree = "<group>"; };
+		8FD00B489BAC7E4240B25141 /* PinnedAppBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinnedAppBuilder.swift; sourceTree = "<group>"; };
+		92399048F3AA6656162E5F3E /* WebAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAppView.swift; sourceTree = "<group>"; };
+		9675607A896ACD68604A909A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AB642F83CA6BB2F88C61330F /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
+		AECCD2C6C94B757DADCF76E4 /* LinkDeckMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkDeckMain.swift; sourceTree = "<group>"; };
+		B4716805393B44BAC360B358 /* BlocklistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlocklistService.swift; sourceTree = "<group>"; };
+		B5EB8A6A27640BBA18E2F830 /* UIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIModels.swift; sourceTree = "<group>"; };
+		CC789917E1F907AAAC919B06 /* SiteIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteIcon.swift; sourceTree = "<group>"; };
+		E550597FBE2BF8B7C9C32A05 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		E7CCBEE74AF902FC142B17DD /* blocklist.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = blocklist.txt; sourceTree = "<group>"; };
+		F66070B30D4176A607067233 /* DeckLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckLink.swift; sourceTree = "<group>"; };
+		FB2647EA0FB9B695DD353352 /* BrowserWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserWindowController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1DE3A34A295C3CF18C742745 /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				FB2647EA0FB9B695DD353352 /* BrowserWindowController.swift */,
+				7F89639DBC60245C9DCA87CA /* DeckWindowController.swift */,
+				B5EB8A6A27640BBA18E2F830 /* UIModels.swift */,
+			);
+			path = Windows;
+			sourceTree = "<group>";
+		};
+		3B2C64ADD7090E220547E313 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8354B5AE5AFF5EF9F3F7B811 /* AppSettings.swift */,
+				F66070B30D4176A607067233 /* DeckLink.swift */,
+				709E8C8750EBB0E01E2A7079 /* DeckStore.swift */,
+				1FF634CCAD4398DD9521F859 /* LinkInput.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		56F287AFA9ECF459B98D051C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B4716805393B44BAC360B358 /* BlocklistService.swift */,
+				583F34FB80D23E3902552AEE /* FaviconService.swift */,
+				8FD00B489BAC7E4240B25141 /* PinnedAppBuilder.swift */,
+				7517E7A508AB84E435585201 /* PinnedIconRenderer.swift */,
+				1C7D22C7370183D494C355A3 /* PinnedLink.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		64B41D2D4D67A174384519AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1EE8688CB13FEAE8D1B363CF /* LinkDeck.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		854D5D85BB0E97D6CE3144CC = {
+			isa = PBXGroup;
+			children = (
+				B6020C0220CB57E4662B6996 /* LinkDeck */,
+				A22B47546C65A40A95C681E0 /* Resources */,
+				64B41D2D4D67A174384519AD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9F4E5DA3405F0DC9B106903B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9675607A896ACD68604A909A /* AppDelegate.swift */,
+				4DD1FA924022F6B406683C1B /* Format.swift */,
+				AECCD2C6C94B757DADCF76E4 /* LinkDeckMain.swift */,
+				26AD935FDBDE25C25D2D956D /* SelfTest.swift */,
+				2EBE1C807C8CFEDA833492E4 /* StableHash.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		A22B47546C65A40A95C681E0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				435A58D154CA432DF98D7BF8 /* AppIcon.icns */,
+				E7CCBEE74AF902FC142B17DD /* blocklist.txt */,
+				51A31D265FB054B905092F3B /* cosmetic.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B1B49F248B8AD37210051BF1 /* WebApp */ = {
+			isa = PBXGroup;
+			children = (
+				881D8D0B2CDD23092CE90103 /* BrowserModel.swift */,
+				92399048F3AA6656162E5F3E /* WebAppView.swift */,
+			);
+			path = WebApp;
+			sourceTree = "<group>";
+		};
+		B6020C0220CB57E4662B6996 /* LinkDeck */ = {
+			isa = PBXGroup;
+			children = (
+				9F4E5DA3405F0DC9B106903B /* App */,
+				3B2C64ADD7090E220547E313 /* Models */,
+				56F287AFA9ECF459B98D051C /* Services */,
+				F4E3DE04FF6568221F3FF306 /* Views */,
+				1DE3A34A295C3CF18C742745 /* Windows */,
+			);
+			path = LinkDeck;
+			sourceTree = "<group>";
+		};
+		F4E3DE04FF6568221F3FF306 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B1B49F248B8AD37210051BF1 /* WebApp */,
+				47F1A8193070A2666934C283 /* AddLinkView.swift */,
+				4C445C1136E01378A7617266 /* DeckTile.swift */,
+				AB642F83CA6BB2F88C61330F /* DeckView.swift */,
+				12568D9B909A6CE4A5FCD239 /* SettingsView.swift */,
+				CC789917E1F907AAAC919B06 /* SiteIcon.swift */,
+				E550597FBE2BF8B7C9C32A05 /* Theme.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B9A78E7ABC35886A10C73414 /* LinkDeck */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46C58A3C5F7A1DCED8E88A4E /* Build configuration list for PBXNativeTarget "LinkDeck" */;
+			buildPhases = (
+				CA4069E63896EA6351B3DAAE /* Sources */,
+				4471924C899C319AEFB72285 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LinkDeck;
+			packageProductDependencies = (
+			);
+			productName = LinkDeck;
+			productReference = 1EE8688CB13FEAE8D1B363CF /* LinkDeck.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CA6F0C4D3BF237EC6581706E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					B9A78E7ABC35886A10C73414 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 36999EA8041CFA7A6A24FD37 /* Build configuration list for PBXProject "LinkDeck" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 854D5D85BB0E97D6CE3144CC;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 64B41D2D4D67A174384519AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B9A78E7ABC35886A10C73414 /* LinkDeck */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4471924C899C319AEFB72285 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				501EDD9620615348A473D482 /* AppIcon.icns in Resources */,
+				2EA8EAF50D10E6C7019B5D4F /* blocklist.txt in Resources */,
+				1E6EBFB6D6EF04350CB08116 /* cosmetic.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CA4069E63896EA6351B3DAAE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8ABE2491FA644903BF0A133 /* AddLinkView.swift in Sources */,
+				871858EEABC913A0451F952C /* AppDelegate.swift in Sources */,
+				FEF2671CF0F7F2FEDE1D3FA5 /* AppSettings.swift in Sources */,
+				7346DCDA9BEBE9EC4443A160 /* BlocklistService.swift in Sources */,
+				C79165241E6B4AA80CE58601 /* BrowserModel.swift in Sources */,
+				DB6EEC097389743CEECC91B3 /* BrowserWindowController.swift in Sources */,
+				5F8B484B423617AD01956B1E /* DeckLink.swift in Sources */,
+				82A3E81D6788D84463AAF682 /* DeckStore.swift in Sources */,
+				9EA74BB858DB652E5542BE80 /* DeckTile.swift in Sources */,
+				8EAC3CCE73FA77A2BE1F71A3 /* DeckView.swift in Sources */,
+				7EA8C75D25A78BB3647E3BDD /* DeckWindowController.swift in Sources */,
+				C5DF1C9B66B9D52DC09C0BC6 /* FaviconService.swift in Sources */,
+				BC306D879FFE0C722F01B0B3 /* Format.swift in Sources */,
+				8ED5BA4D260785547B8A8B8B /* LinkDeckMain.swift in Sources */,
+				BCC9A5A0C011AEA5618A393D /* LinkInput.swift in Sources */,
+				A8DD7C2B3E0559E16BF62572 /* PinnedAppBuilder.swift in Sources */,
+				48F67A1B6DFBCE02EA7DCF8E /* PinnedIconRenderer.swift in Sources */,
+				D0AB87A6E72DA4E3069DB28C /* PinnedLink.swift in Sources */,
+				010ABFB7199252449C04F6FD /* SelfTest.swift in Sources */,
+				30F54AFEB7F9F1A9FBF6BF53 /* SettingsView.swift in Sources */,
+				61B12454E7887578969D795F /* SiteIcon.swift in Sources */,
+				6FCE636A11A9CE1B1F6F1D43 /* StableHash.swift in Sources */,
+				160FAF8F15B6B102F705AE3A /* Theme.swift in Sources */,
+				1A6A4CDE773BD40BDA6566D4 /* UIModels.swift in Sources */,
+				76DFE68851C83AB91E80CA9E /* WebAppView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		07BBCD1FC40AEBE3703F3978 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Support/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.linkdeck.mac;
+				PRODUCT_NAME = LinkDeck;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		2275C654FB2B940CB154F77B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_APP_SANDBOX = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Support/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.linkdeck.mac;
+				PRODUCT_NAME = LinkDeck;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		52B48BC80DB312781800797D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		8F2B077A88816F290714242D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		36999EA8041CFA7A6A24FD37 /* Build configuration list for PBXProject "LinkDeck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52B48BC80DB312781800797D /* Debug */,
+				8F2B077A88816F290714242D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		46C58A3C5F7A1DCED8E88A4E /* Build configuration list for PBXNativeTarget "LinkDeck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07BBCD1FC40AEBE3703F3978 /* Debug */,
+				2275C654FB2B940CB154F77B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CA6F0C4D3BF237EC6581706E /* Project object */;
+}

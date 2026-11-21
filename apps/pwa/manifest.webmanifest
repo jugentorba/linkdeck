@@ -1,0 +1,37 @@
+{
+  "id": "./",
+  "name": "LinkDeck",
+  "short_name": "LinkDeck",
+  "description": "Your links, as apps. Save any site to a deck and open it without browser chrome.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "lang": "en",
+  "dir": "ltr",
+  "theme_color": "#0B0D10",
+  "background_color": "#0B0D10",
+  "categories": [
+    "productivity",
+    "utilities"
+  ],
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

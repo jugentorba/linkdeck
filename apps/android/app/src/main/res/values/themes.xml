@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.LinkDeck" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="android:windowBackground">@color/bg</item>
+        <item name="colorPrimary">@color/accent</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/accent</item>
+        <item name="colorOnPrimaryContainer">@color/white</item>
+        <item name="colorSecondary">@color/accent_2</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorSurfaceContainer">@color/surface</item>
+        <item name="colorSurfaceContainerHigh">@color/surface_2</item>
+        <item name="colorOnSurface">@color/text</item>
+        <item name="colorOnSurfaceVariant">@color/muted</item>
+        <item name="colorOutline">@color/stroke</item>
+        <item name="colorOutlineVariant">@color/stroke</item>
+        <item name="colorError">@color/danger</item>
+        <item name="android:colorBackground">@color/bg</item>
+        <item name="android:textColorPrimary">@color/text</item>
+        <item name="android:textColorSecondary">@color/muted</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/bg</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.LinkDeck.Dialog</item>
+    </style>
+
+    <style name="Theme.LinkDeck.Browser" parent="Theme.LinkDeck">
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="ThemeOverlay.LinkDeck.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/text</item>
+        <item name="android:windowBackground">@color/surface</item>
+    </style>
+
+    <style name="ShapeAppearance.LinkDeck.TileIcon" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <style name="ShapeAppearance.LinkDeck.Sheet" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">28dp</item>
+        <item name="cornerSizeTopRight">28dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
+    <style name="Widget.LinkDeck.BottomSheet" parent="Widget.Material3.BottomSheet.Modal">
+        <item name="backgroundTint">@color/surface</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.LinkDeck.Sheet</item>
+    </style>
+
+    <style name="ThemeOverlay.LinkDeck.Sheet" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.LinkDeck.BottomSheet</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:navigationBarColor">@color/surface</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+
+    <style name="LinkDeck.Body" parent="">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/muted</item>
+        <item name="android:lineSpacingMultiplier">1.25</item>
+    </style>
+
+    <style name="LinkDeck.Label" parent="">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/muted_2</item>
+        <item name="android:letterSpacing">0.09</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+</resources>

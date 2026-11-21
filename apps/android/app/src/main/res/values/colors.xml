@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#0B0D10</color>
+    <color name="surface">#14171C</color>
+    <color name="surface_2">#1C2027</color>
+    <color name="stroke">#272D36</color>
+    <color name="text">#F2F5F7</color>
+    <color name="muted">#98A2B3</color>
+    <color name="muted_2">#6B7482</color>
+    <color name="accent">#7C6BFF</color>
+    <color name="accent_2">#A78BFA</color>
+    <color name="success">#34D399</color>
+    <color name="danger">#F87171</color>
+    <color name="white">#FFFFFF</color>
+    <color name="chrome">#F214171C</color>
+    <color name="shield_pill">#1F34D399</color>
+    <color name="scrim">#B3000000</color>
+    <color name="ripple">#1FFFFFFF</color>
+    <color name="ic_launcher_background">#5B5BF7</color>
+</resources>

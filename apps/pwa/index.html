@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>LinkDeck</title>
+  <meta name="description" content="Your links, as apps. Save any site to a deck and open it without browser chrome.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0B0D10">
+  <meta name="application-name" content="LinkDeck">
+
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/favicon.png" sizes="64x64" type="image/png">
+  <link rel="icon" href="icons/icon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="LinkDeck">
+</head>
+<body>
+  <a class="skip-link" href="#deck">Skip to deck</a>
+
+  <header class="topbar">
+    <div class="brand">
+      <h1>LinkDeck</h1>
+      <p class="subtitle" id="deck-subtitle">Your links, as apps</p>
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn add-button" id="add-button" type="button" aria-label="Add a link">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>
+      </button>
+      <button class="btn btn-ghost install-button" id="install-button" type="button" aria-label="Install LinkDeck">
+        <svg class="icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5"></path>
+          <path d="M5 17.5V19a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1.5"></path>
+        </svg>
+        <span class="install-label">Install</span>
+      </button>
+      <button class="icon-btn" id="settings-button" type="button" aria-label="Settings" aria-haspopup="dialog">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3.2"></circle>
+          <path d="M19.4 15a1.6 1.6 0 0 0 .32 1.77l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.6 1.6 0 0 0-1.77-.32 1.6 1.6 0 0 0-.97 1.46V21a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1.05-1.46 1.6 1.6 0 0 0-1.77.32l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.6 1.6 0 0 0 4.6 15a1.6 1.6 0 0 0-1.46-.97H3a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.46-1.05 1.6 1.6 0 0 0-.32-1.77l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.6 1.6 0 0 0 8.84 4.7 1.6 1.6 0 0 0 9.8 3.24V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 .97 1.46 1.6 1.6 0 0 0 1.77-.32l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.6 1.6 0 0 0-.32 1.77 1.6 1.6 0 0 0 1.46.97H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5.99Z"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="deck" id="deck" tabindex="-1">
+    <section class="empty" id="empty-state" aria-labelledby="empty-title">
+      <div class="empty-art" aria-hidden="true">
+        <svg viewBox="0 0 96 96" fill="none">
+          <rect x="17" y="24" width="46" height="56" rx="10" transform="rotate(-9 17 24)" fill="#1C2027" stroke="#272D36"/>
+          <rect x="28" y="19" width="50" height="60" rx="11" fill="#14171C" stroke="#3A4150"/>
+          <rect x="38" y="31" width="17" height="17" rx="5" fill="#7C6BFF" opacity=".28"/>
+          <path d="M46.5 35.5v8M42.5 39.5h8" stroke="#A78BFA" stroke-width="2" stroke-linecap="round"/>
+          <rect x="38" y="56" width="30" height="4" rx="2" fill="#272D36"/>
+          <rect x="38" y="64" width="20" height="4" rx="2" fill="#1C2027"/>
+        </svg>
+      </div>
+      <h2 id="empty-title">Nothing here yet</h2>
+      <p>Paste a link and it becomes an app on your deck — no browser chrome, no ads.</p>
+      <button class="btn btn-primary" id="empty-add" type="button">Add a link</button>
+      <p class="empty-note">The web build opens links in browser tabs, which a page can’t ad-block. The native apps can.</p>
+    </section>
+
+    <ul class="grid" id="grid" aria-label="Saved links"></ul>
+  </main>
+
+  <footer class="footnote">
+    <p>Links stay in this browser. <button class="linkish" id="blocking-info" type="button">Why no ad blocking?</button></p>
+  </footer>
+
+  <dialog class="sheet" id="link-dialog" aria-labelledby="link-dialog-title">
+    <form class="sheet-form" id="link-form" novalidate>
+      <header class="sheet-head">
+        <div>
+          <h2 id="link-dialog-title">Add a link</h2>
+          <p class="sheet-subtitle" id="link-dialog-subtitle">Anything with a web address works.</p>
+        </div>
+        <button class="icon-btn" type="button" data-close aria-label="Close">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+        </button>
+      </header>
+      <div class="sheet-body">
+        <div class="field" id="url-field">
+          <label for="link-url">URL</label>
+          <input id="link-url" name="url" type="url" inputmode="url" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" placeholder="example.com" aria-describedby="url-error">
+          <p class="field-error" id="url-error" role="alert"></p>
+        </div>
+        <div class="field">
+          <div class="label-row">
+            <label for="link-name">Name</label>
+            <span class="label-note">Optional</span>
+          </div>
+          <input id="link-name" name="name" type="text" autocomplete="off" maxlength="40" placeholder="Shown on your deck" aria-describedby="name-hint name-error">
+          <p class="field-hint" id="name-hint">Up to 40 characters.</p>
+          <p class="field-error" id="name-error" role="alert"></p>
+        </div>
+      </div>
+      <footer class="sheet-foot">
+        <button class="btn btn-ghost" type="button" data-close>Cancel</button>
+        <button class="btn btn-primary" id="link-submit" type="submit">Add to deck</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <dialog class="sheet sheet-wide" id="settings-dialog" aria-labelledby="settings-title">
+    <header class="sheet-head">
+      <h2 id="settings-title">Settings</h2>
+      <button class="icon-btn" type="button" data-close aria-label="Close settings">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+      </button>
+    </header>
+    <div class="sheet-body settings-body">
+      <section class="settings-section" id="blocking-section" aria-labelledby="blocking-heading">
+        <h3 class="section-label" id="blocking-heading">Blocking</h3>
+        <div class="card">
+          <p class="card-lede">The web build can’t block ads inside other sites.</p>
+          <p>A browser doesn’t let one page intercept the requests another tab makes. LinkDeck’s native apps load sites in an embedded web view and filter trackers there; this build opens every link in a normal tab or window.</p>
+          <ul class="native-links" aria-label="Native apps in the repository">
+            <li><a href="../android/" target="_blank" rel="noopener">Android app</a></li>
+            <li><a href="../ios/" target="_blank" rel="noopener">iOS app</a></li>
+            <li><a href="../macos/" target="_blank" rel="noopener">macOS app</a></li>
+          </ul>
+          <p class="repo-note">Repo folders: <code>apps/android</code>, <code>apps/ios</code>, <code>apps/macos</code>.</p>
+
+          <div class="blocklist">
+            <div class="blocklist-head">
+              <h4>Bundled blocklist</h4>
+              <p class="blocklist-count"><strong id="blocklist-count">Loading…</strong> domains</p>
+            </div>
+            <p class="field-hint">Shipped for the native apps. The web build shows it for reference only.</p>
+            <label class="sr-only" for="blocklist-search">Search blocked domains</label>
+            <input class="search-input" id="blocklist-search" type="search" placeholder="Search blocked domains" autocomplete="off" spellcheck="false" disabled>
+            <ul class="domain-list" id="blocklist-preview" aria-live="polite" aria-label="Bundled blocklist preview" tabindex="0"></ul>
+            <p class="field-hint" id="blocklist-note"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="settings-section" aria-labelledby="data-heading">
+        <h3 class="section-label" id="data-heading">Data</h3>
+        <div class="card">
+          <p>Links live in this browser only. Export a JSON copy, import one, or clear the deck.</p>
+          <div class="button-row">
+            <button class="btn btn-ghost" id="export-button" type="button">Export links</button>
+            <button class="btn btn-ghost" id="import-button" type="button">Import links</button>
+            <button class="btn btn-danger-ghost" id="clear-button" type="button">Clear all links</button>
+          </div>
+          <input class="sr-only" id="import-input" type="file" accept="application/json,.json" aria-label="Import a LinkDeck JSON file" tabindex="-1">
+          <p class="field-hint" id="import-status" role="status"></p>
+        </div>
+      </section>
+
+      <section class="settings-section" aria-labelledby="about-heading">
+        <h3 class="section-label" id="about-heading">About</h3>
+        <div class="card">
+          <dl class="about-grid">
+            <dt>Version</dt><dd>1.0.0 · web build</dd>
+            <dt>Storage</dt><dd>localStorage in this browser</dd>
+          </dl>
+          <p>Each tile is a saved site. Tap one and it opens in a new tab or window — LinkDeck can’t remove that browser’s URL bar or block its ads. Install the app for an app-like window and offline access to your deck.</p>
+          <button class="btn btn-ghost" id="settings-install" type="button">Install LinkDeck</button>
+        </div>
+      </section>
+    </div>
+  </dialog>
+
+  <dialog class="sheet sheet-small" id="install-dialog" aria-labelledby="install-title">
+    <header class="sheet-head">
+      <div>
+        <h2 id="install-title">Install LinkDeck</h2>
+        <p class="sheet-subtitle" id="install-subtitle">Keep the deck one tap away.</p>
+      </div>
+      <button class="icon-btn" type="button" data-close aria-label="Close">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+      </button>
+    </header>
+    <div class="sheet-body">
+      <ol class="steps" id="install-steps"></ol>
+      <p class="field-hint" id="install-note"></p>
+    </div>
+    <footer class="sheet-foot">
+      <button class="btn btn-primary" type="button" data-close>Done</button>
+    </footer>
+  </dialog>
+
+  <dialog class="sheet sheet-small" id="confirm-dialog" aria-labelledby="confirm-title">
+    <header class="sheet-head">
+      <h2 id="confirm-title">Clear deck?</h2>
+      <button class="icon-btn" type="button" data-close aria-label="Close">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+      </button>
+    </header>
+    <div class="sheet-body">
+      <p id="confirm-body">Remove all saved links from this browser? This can’t be undone.</p>
+    </div>
+    <footer class="sheet-foot">
+      <button class="btn btn-ghost" type="button" data-close>Cancel</button>
+      <button class="btn btn-danger" id="confirm-action" type="button">Clear deck</button>
+    </footer>
+  </dialog>
+
+  <div class="menu" id="context-menu" role="menu" aria-label="Link actions" hidden>
+    <button type="button" role="menuitem" data-action="open">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 5h5v5M19 5l-8 8"></path><path d="M19 14v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4"></path></svg>
+      Open
+    </button>
+    <button type="button" role="menuitem" data-action="window">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="12" rx="2"></rect><path d="M21 8v9a2 2 0 0 1-2 2H8"></path></svg>
+      Open in new window
+    </button>
+    <button type="button" role="menuitem" data-action="rename">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4l10.5-10.5a2.1 2.1 0 0 0-3-3L5 17v3Z"></path><path d="M13.5 5.5l3 3"></path></svg>
+      Rename
+    </button>
+    <div class="menu-sep" role="separator"></div>
+    <button type="button" role="menuitem" data-action="remove" class="menu-danger">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M10 11v6M14 11v6"></path><path d="M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12M9 7V4h6v3"></path></svg>
+      Remove
+    </button>
+  </div>
+
+  <section class="embed-view" id="embed-view" aria-label="Embedded site" hidden>
+    <div class="embed-bar">
+      <button class="icon-btn" id="embed-back" type="button" aria-label="Back to deck">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg>
+      </button>
+      <div class="embed-title">
+        <strong id="embed-name">Site</strong>
+        <span id="embed-host">example.com</span>
+      </div>
+      <a class="btn btn-ghost embed-open" id="embed-open" href="#" target="_blank" rel="noopener">Open in browser</a>
+      <button class="icon-btn" id="embed-close" type="button" aria-label="Close embedded site">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"></path></svg>
+      </button>
+    </div>
+    <iframe class="embed-frame" id="embed-frame" title="Embedded site" referrerpolicy="no-referrer" allow="fullscreen; autoplay; clipboard-read; clipboard-write"></iframe>
+    <div class="embed-fallback" id="embed-fallback" hidden>
+      <p><strong>Blank page?</strong> Many sites refuse to be embedded with X-Frame-Options. Open it in a browser tab instead.</p>
+      <div class="embed-fallback-actions">
+        <button class="btn btn-primary" id="fallback-open" type="button">Open in browser</button>
+        <button class="btn btn-ghost" id="fallback-back" type="button">Back to deck</button>
+        <button class="btn btn-ghost" id="fallback-dismiss" type="button">Dismiss</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="toasts" id="toasts" aria-live="polite" aria-atomic="false"></div>
+
+  <noscript><p class="noscript">LinkDeck needs JavaScript to save and open your links.</p></noscript>
+  <script src="app.js" defer></script>
+</body>
+</html>

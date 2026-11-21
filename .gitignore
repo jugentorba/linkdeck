@@ -1,0 +1,29 @@
+# Build output
+apps/android/.gradle/
+apps/android/build/
+apps/android/app/build/
+apps/android/local.properties
+apps/android/LinkDeck-debug.apk
+apps/macos/build/
+apps/macos/.build/
+apps/macos/build.log
+apps/ios/build/
+apps/ios/build-ipa/
+apps/ios/build-ui/
+apps/ios/*.xcodeproj/
+apps/ios/*.ipa
+apps/ios/*.log
+apps/pwa/.cache/
+dist/
+
+# OS noise
+.DS_Store
+*.swp
+
+# Generated iconset staging
+shared/icon/LinkDeck.iconset/
+
+# Local test captures
+apps/ios/screenshot.png
+apps/ios/screenshot-browser.png
+apps/ios/dynamic-type.png
